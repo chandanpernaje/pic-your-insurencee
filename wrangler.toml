@@ -2,6 +2,3 @@ name = "pic-ur-insurencee"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".output/public"
-
-[vars]
-SUPABASE_URL = "https://dmrlrjdblffygcntgzkw.supabase.co"
