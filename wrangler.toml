@@ -1,11 +1,7 @@
-name = "run-it-simply"
+name = "pic-your-insurencee"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".output/public"
 
 [vars]
-# Add your environment variables here (non-secret ones)
-# VITE_SUPABASE_URL = "your-supabase-url"
-
-# For secret env vars (SUPABASE_ANON_KEY etc), set them via:
-#   wrangler pages secret put VITE_SUPABASE_ANON_KEY
+SUPABASE_URL = "https://dmrlrjdblffygcntgzkw.supabase.co"
