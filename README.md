@@ -88,4 +88,4 @@ Developed by Chandan Kumar P
 
 ## License
 
-This project is intended for business and insurance service purposes.
+This project was created to support an insurance business and provide insurance-related services to customers.
