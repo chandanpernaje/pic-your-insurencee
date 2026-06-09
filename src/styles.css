@@ -40,56 +40,80 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --shadow-elegant: 0 20px 60px -20px color-mix(in oklab, var(--primary) 35%, transparent);
-  --shadow-emerald: 0 16px 40px -16px color-mix(in oklab, var(--accent) 45%, transparent);
+  --shadow-emerald: 0 16px 40px -16px color-mix(in oklab, var(--gold) 50%, transparent);
+  --shadow-gold: 0 16px 40px -16px color-mix(in oklab, var(--gold) 50%, transparent);
+  --shadow-purple: 0 20px 50px -18px color-mix(in oklab, var(--primary) 45%, transparent);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
 }
 
+/* ─── Premium Purple & Gold palette ─── */
 :root {
   --radius: 0.875rem;
 
-  --background: oklch(0.985 0.005 240);
-  --foreground: oklch(0.18 0.04 260);
+  /* Backgrounds — warm cream tones */
+  --background: oklch(0.98 0.006 280);
+  --foreground: oklch(0.16 0.04 285);
+
+  /* Cards — clean white with subtle warmth */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 260);
+  --card-foreground: oklch(0.16 0.04 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 260);
-  --primary: oklch(0.21 0.04 260);
-  --primary-foreground: oklch(0.985 0.005 240);
-  --primary-glow: oklch(0.32 0.07 260);
-  --secondary: oklch(0.96 0.01 250);
-  --secondary-foreground: oklch(0.21 0.04 260);
-  --muted: oklch(0.96 0.01 250);
-  --muted-foreground: oklch(0.5 0.03 255);
-  --accent: oklch(0.62 0.14 160);
-  --accent-foreground: oklch(0.985 0.005 240);
-  --accent-glow: oklch(0.73 0.16 162);
-  --gold: oklch(0.82 0.13 85);
+  --popover-foreground: oklch(0.16 0.04 285);
+
+  /* Primary — deep royal purple */
+  --primary: oklch(0.22 0.08 290);
+  --primary-foreground: oklch(0.98 0.006 280);
+  --primary-glow: oklch(0.35 0.12 285);
+
+  /* Secondary — soft lavender */
+  --secondary: oklch(0.95 0.015 285);
+  --secondary-foreground: oklch(0.22 0.08 290);
+
+  /* Muted */
+  --muted: oklch(0.95 0.015 285);
+  --muted-foreground: oklch(0.50 0.03 280);
+
+  /* Accent — rich gold */
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: oklch(0.18 0.06 290);
+  --accent-glow: oklch(0.82 0.14 80);
+
+  /* Gold — warm amber */
+  --gold: oklch(0.80 0.15 85);
+
+  /* Destructive */
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.985 0.005 240);
-  --border: oklch(0.92 0.01 250);
-  --input: oklch(0.92 0.01 250);
-  --ring: oklch(0.62 0.14 160);
+
+  /* Borders — soft purple-grey */
+  --border: oklch(0.91 0.012 280);
+  --input: oklch(0.91 0.012 280);
+  --ring: oklch(0.75 0.15 85);
 }
 
 .dark {
-  --background: oklch(0.18 0.04 260);
-  --foreground: oklch(0.985 0.005 240);
-  --card: oklch(0.23 0.04 260);
-  --card-foreground: oklch(0.985 0.005 240);
-  --popover: oklch(0.23 0.04 260);
-  --popover-foreground: oklch(0.985 0.005 240);
-  --primary: oklch(0.985 0.005 240);
-  --primary-foreground: oklch(0.21 0.04 260);
-  --primary-glow: oklch(0.4 0.08 260);
-  --secondary: oklch(0.28 0.04 260);
-  --secondary-foreground: oklch(0.985 0.005 240);
-  --muted: oklch(0.28 0.04 260);
-  --muted-foreground: oklch(0.72 0.02 255);
-  --accent: oklch(0.65 0.15 160);
-  --accent-foreground: oklch(0.18 0.04 260);
-  --accent-glow: oklch(0.75 0.17 162);
+  --background: oklch(0.14 0.05 290);
+  --foreground: oklch(0.98 0.006 280);
+  --card: oklch(0.20 0.05 288);
+  --card-foreground: oklch(0.98 0.006 280);
+  --popover: oklch(0.20 0.05 288);
+  --popover-foreground: oklch(0.98 0.006 280);
+  --primary: oklch(0.98 0.006 280);
+  --primary-foreground: oklch(0.16 0.06 290);
+  --primary-glow: oklch(0.42 0.14 285);
+  --secondary: oklch(0.25 0.05 288);
+  --secondary-foreground: oklch(0.98 0.006 280);
+  --muted: oklch(0.25 0.05 288);
+  --muted-foreground: oklch(0.72 0.02 280);
+  --accent: oklch(0.78 0.15 85);
+  --accent-foreground: oklch(0.14 0.05 290);
+  --accent-glow: oklch(0.85 0.14 80);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.15 160);
+  --ring: oklch(0.78 0.15 85);
 }
 
 @layer base {
@@ -115,18 +139,89 @@
   font-family: var(--font-display);
 }
 
+/* ─── Premium Gradients ─── */
 @utility gradient-hero {
-  background-image: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-glow) 60%, color-mix(in oklab, var(--color-accent) 40%, var(--color-primary-glow)) 100%);
+  background-image: linear-gradient(
+    135deg,
+    oklch(0.18 0.08 295) 0%,
+    oklch(0.28 0.12 285) 40%,
+    oklch(0.32 0.14 275) 70%,
+    color-mix(in oklab, var(--color-gold) 25%, oklch(0.30 0.12 285)) 100%
+  );
 }
 
 @utility gradient-emerald {
-  background-image: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-glow) 100%);
+  background-image: linear-gradient(
+    135deg,
+    oklch(0.72 0.14 85) 0%,
+    oklch(0.82 0.13 78) 100%
+  );
 }
 
+@utility gradient-gold {
+  background-image: linear-gradient(
+    135deg,
+    oklch(0.72 0.14 85) 0%,
+    oklch(0.82 0.13 78) 100%
+  );
+}
+
+@utility gradient-purple {
+  background-image: linear-gradient(
+    135deg,
+    oklch(0.30 0.12 295) 0%,
+    oklch(0.45 0.16 280) 100%
+  );
+}
+
+/* ─── Shadows ─── */
 @utility shadow-elegant {
   box-shadow: var(--shadow-elegant);
 }
 
 @utility shadow-emerald {
-  box-shadow: var(--shadow-emerald);
+  box-shadow: var(--shadow-gold);
+}
+
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+@utility shadow-purple {
+  box-shadow: var(--shadow-purple);
+}
+
+/* ─── Micro-animations ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass effect utility */
+@utility glass {
+  background: color-mix(in oklab, var(--color-card) 70%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+}
+
+/* Animated gradient background */
+@utility gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
 }

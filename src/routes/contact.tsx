@@ -67,7 +67,7 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-16 grid md:grid-cols-[1.2fr_1fr] gap-5">
+      <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-20 grid md:grid-cols-[1.2fr_1fr] gap-5">
         <form
           onSubmit={submit}
           className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-elegant grid gap-5"
@@ -101,7 +101,7 @@ function ContactPage() {
 
           <button
             type="submit"
-            className="inline-flex items-center justify-center gap-2 py-4 rounded-full gradient-emerald text-accent-foreground font-semibold shadow-emerald hover:translate-y-[-1px] transition"
+            className="inline-flex items-center justify-center gap-2 py-4 rounded-full gradient-gold text-accent-foreground font-semibold shadow-gold hover:translate-y-[-1px] hover:shadow-lg transition-all"
           >
             Send via WhatsApp <Send className="size-4" />
           </button>
@@ -142,8 +142,8 @@ function ContactPage() {
           transition: border-color .15s, box-shadow .15s;
         }
         .contact-input:focus {
-          border-color: var(--color-accent);
-          box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-accent) 18%, transparent);
+          border-color: var(--color-gold);
+          box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-gold) 18%, transparent);
         }
       `}</style>
     </Layout>
@@ -166,9 +166,9 @@ function ContactCard({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="flex items-center gap-4 bg-card border border-border rounded-2xl p-5 hover:border-accent/40 hover:shadow-elegant transition-all"
+      className="flex items-center gap-4 bg-card border border-border rounded-2xl p-5 hover:border-gold/40 hover:shadow-gold transition-all duration-300"
     >
-      <div className="size-12 rounded-2xl gradient-emerald grid place-items-center shadow-emerald shrink-0">
+      <div className="size-12 rounded-2xl gradient-gold grid place-items-center shadow-gold shrink-0">
         <Icon className="size-5 text-accent-foreground" />
       </div>
       <div>

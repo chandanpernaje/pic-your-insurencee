@@ -69,15 +69,15 @@ function AuthPage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="border-b border-border">
+      <header className="border-b border-border/50">
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="size-9 rounded-xl gradient-emerald grid place-items-center shadow-emerald">
+            <div className="size-9 rounded-xl gradient-gold grid place-items-center shadow-gold">
               <Shield className="size-5 text-accent-foreground" strokeWidth={2.5} />
             </div>
             <span className="font-display text-lg text-primary">{AGENT.company}</span>
           </Link>
-          <Link to="/" className="text-sm text-muted-foreground hover:text-primary">
+          <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             ← Back to site
           </Link>
         </div>
@@ -118,7 +118,7 @@ function AuthPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-4 focus:ring-accent/15 outline-none transition"
+                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-gold focus:ring-4 focus:ring-gold/15 outline-none transition"
                   required
                 />
               </label>
@@ -129,7 +129,7 @@ function AuthPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   autoComplete={mode === "login" ? "current-password" : "new-password"}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-accent focus:ring-4 focus:ring-accent/15 outline-none transition"
+                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-gold focus:ring-4 focus:ring-gold/15 outline-none transition"
                   required
                   minLength={8}
                 />
@@ -144,7 +144,7 @@ function AuthPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-2 inline-flex items-center justify-center gap-2 py-3.5 rounded-full gradient-emerald text-accent-foreground font-semibold shadow-emerald disabled:opacity-50 transition hover:translate-y-[-1px]"
+                className="mt-2 inline-flex items-center justify-center gap-2 py-3.5 rounded-full gradient-gold text-accent-foreground font-semibold shadow-gold disabled:opacity-50 transition-all hover:translate-y-[-1px]"
               >
                 {loading ? (
                   <Loader2 className="size-4 animate-spin" />

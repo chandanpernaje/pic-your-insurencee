@@ -62,7 +62,7 @@ function CalculatorPage() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-16">
+      <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-20">
         <div className="bg-card border border-border rounded-3xl p-6 md:p-10 shadow-elegant grid gap-8">
           {/* type */}
           <div>
@@ -79,8 +79,8 @@ function CalculatorPage() {
                     onClick={() => setType(t.key)}
                     className={`py-3 rounded-2xl text-sm font-medium border transition-all ${
                       active
-                        ? "border-accent gradient-emerald text-accent-foreground shadow-emerald"
-                        : "border-border bg-background hover:border-accent/50"
+                        ? "border-gold gradient-gold text-accent-foreground shadow-gold"
+                        : "border-border bg-background hover:border-gold/50"
                     }`}
                   >
                     {t.key} · {t.kn}
@@ -101,7 +101,6 @@ function CalculatorPage() {
             onChange={setAge}
           />
 
-
           {/* coverage */}
           <Slider
             label="Coverage amount · ಕವರೇಜ್ ಮೊತ್ತ"
@@ -114,24 +113,27 @@ function CalculatorPage() {
           />
 
           {/* result */}
-          <div className="rounded-3xl gradient-hero text-primary-foreground p-7 md:p-9 text-center">
-            <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-accent-glow font-semibold">
-              <CalcIcon className="size-3.5" /> Estimated annual premium · ವಾರ್ಷಿಕ ಪ್ರೀಮಿಯಂ
+          <div className="rounded-3xl gradient-hero text-primary-foreground p-7 md:p-9 text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-gold/15 blur-[80px] rounded-full" />
+            <div className="relative">
+              <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-accent-glow font-semibold">
+                <CalcIcon className="size-3.5" /> Estimated annual premium · ವಾರ್ಷಿಕ ಪ್ರೀಮಿಯಂ
+              </div>
+              <div className="mt-3 font-display text-4xl md:text-6xl">
+                {formatINR(low)} <span className="opacity-60 text-2xl md:text-3xl">—</span>{" "}
+                {formatINR(high)}
+              </div>
+              <p className="mt-3 text-primary-foreground/70 text-sm max-w-md mx-auto">
+                Indicative range · ಸೂಚಕ ಶ್ರೇಣಿ. Final premium depends on insurer, riders and
+                medical/vehicle profile.
+              </p>
+              <Link
+                to="/quote"
+                className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full gradient-gold text-accent-foreground font-semibold shadow-gold hover:translate-y-[-1px] transition-all"
+              >
+                Get exact quote · ನಿಖರ ಕೋಟ್ <ArrowRight className="size-4" />
+              </Link>
             </div>
-            <div className="mt-3 font-display text-4xl md:text-6xl">
-              {formatINR(low)} <span className="opacity-60 text-2xl md:text-3xl">—</span>{" "}
-              {formatINR(high)}
-            </div>
-            <p className="mt-3 text-primary-foreground/70 text-sm max-w-md mx-auto">
-              Indicative range · ಸೂಚಕ ಶ್ರೇಣಿ. Final premium depends on insurer, riders and
-              medical/vehicle profile.
-            </p>
-            <Link
-              to="/quote"
-              className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full gradient-emerald text-accent-foreground font-semibold shadow-emerald hover:translate-y-[-1px] transition"
-            >
-              Get exact quote · ನಿಖರ ಕೋಟ್ <ArrowRight className="size-4" />
-            </Link>
           </div>
         </div>
       </section>
@@ -161,7 +163,7 @@ function Slider({
     <div>
       <div className="flex justify-between items-baseline mb-3">
         <label className="text-sm font-medium text-primary">{label}</label>
-        <span className="font-display text-2xl text-accent">{display}</span>
+        <span className="font-display text-2xl text-gold">{display}</span>
       </div>
       <input
         type="range"
@@ -172,7 +174,7 @@ function Slider({
         onChange={(e) => onChange(Number(e.target.value))}
         className="custom-range w-full"
         style={{
-          background: `linear-gradient(to right, var(--color-accent) 0%, var(--color-accent) ${pct}%, var(--color-secondary) ${pct}%, var(--color-secondary) 100%)`,
+          background: `linear-gradient(to right, var(--color-gold) 0%, var(--color-gold) ${pct}%, var(--color-secondary) ${pct}%, var(--color-secondary) 100%)`,
         }}
       />
       <style>{`
@@ -190,16 +192,16 @@ function Slider({
           height: 24px;
           border-radius: 999px;
           background: var(--color-primary);
-          border: 3px solid var(--color-accent);
+          border: 3px solid var(--color-gold);
           cursor: pointer;
-          box-shadow: 0 4px 14px -3px color-mix(in oklab, var(--color-accent) 60%, transparent);
+          box-shadow: 0 4px 14px -3px color-mix(in oklab, var(--color-gold) 60%, transparent);
         }
         .custom-range::-moz-range-thumb {
           width: 24px;
           height: 24px;
           border-radius: 999px;
           background: var(--color-primary);
-          border: 3px solid var(--color-accent);
+          border: 3px solid var(--color-gold);
           cursor: pointer;
         }
       `}</style>

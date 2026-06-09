@@ -53,7 +53,7 @@ const categories: {
     key: "car",
     title: "Car Insurance",
     titleKn: "ಕಾರು ವಿಮೆ",
-    desc: "Comprehensive, third-party & zero-dep add-ons.",
+    desc: "Comprehensive, third-party & zero-depreciation add-ons.",
     descKn: "ಸಮಗ್ರ, ಥರ್ಡ್ ಪಾರ್ಟಿ ಮತ್ತು ಶೂನ್ಯ ಸವಕಳಿ ಆಡ್-ಆನ್‌ಗಳು.",
     Icon: Car,
   },
@@ -100,13 +100,13 @@ function PoliciesPage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-5 py-10 grid gap-4">
+      <section className="max-w-5xl mx-auto px-5 py-10 md:py-14 grid gap-5">
         {categories.map(({ key, title, titleKn, desc, descKn, Icon }) => {
           const links = AGENT.compareLinks[key];
           return (
             <div
               key={key}
-              className="bg-card border border-border rounded-3xl p-5 md:p-7 hover:shadow-elegant transition-all"
+              className="bg-card border border-border rounded-3xl p-5 md:p-7 hover:shadow-elegant hover:border-gold/30 transition-all duration-300"
             >
               <div className="grid sm:grid-cols-2 gap-3">
                 <PortalLink
@@ -129,9 +129,9 @@ function PoliciesPage() {
                 />
               </div>
 
-              <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-between gap-3">
+              <div className="mt-5 pt-5 flex flex-wrap items-center justify-between gap-3">
                 <p className="text-xs text-muted-foreground flex items-center gap-1.5">
-                  <ShieldCheck className="size-3.5 text-accent" />
+                  <ShieldCheck className="size-3.5 text-gold" />
                   Found a plan you like? Nandan will send the secure payment link.
                 </p>
                 <a
@@ -140,7 +140,7 @@ function PoliciesPage() {
                   )}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full gradient-emerald text-accent-foreground text-sm font-semibold shadow-emerald hover:translate-y-[-1px] transition"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full gradient-gold text-accent-foreground text-sm font-semibold shadow-gold hover:translate-y-[-1px] transition-all"
                 >
                   <MessageCircle className="size-4" /> Message Nandan
                 </a>
@@ -181,22 +181,22 @@ function PortalLink({
       href={href}
       target="_blank"
       rel="noreferrer noopener"
-      className="group flex flex-col gap-4 p-5 rounded-2xl border border-border bg-background hover:border-accent hover:bg-accent/5 transition"
+      className="group flex flex-col gap-4 p-5 rounded-2xl border border-border bg-background hover:border-gold hover:bg-gold/5 transition-all duration-300"
     >
       <div className="flex items-start gap-3">
-        <div className="size-11 rounded-2xl gradient-emerald grid place-items-center shadow-emerald shrink-0">
+        <div className="size-11 rounded-2xl gradient-gold grid place-items-center shadow-gold shrink-0">
           <Icon className="size-5 text-accent-foreground" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="font-display text-lg text-primary leading-tight">{title}</div>
-          <div className="text-xs text-accent">{titleKn}</div>
+          <div className="text-xs text-gold">{titleKn}</div>
           <p className="text-xs text-muted-foreground mt-1.5 leading-snug">{desc}</p>
           <p className="text-[11px] text-muted-foreground/80 mt-0.5 leading-snug">{descKn}</p>
         </div>
       </div>
-      <span className="inline-flex items-center justify-between gap-2 text-sm font-medium text-primary pt-3 border-t border-border/60 group-hover:text-accent">
+      <span className="inline-flex items-center justify-between gap-2 text-sm font-medium text-primary pt-3 border-t border-border/60 group-hover:text-gold transition-colors">
         {label}
-        <ExternalLink className="size-4 text-muted-foreground group-hover:text-accent" />
+        <ExternalLink className="size-4 text-muted-foreground group-hover:text-gold transition-colors" />
       </span>
     </a>
   );

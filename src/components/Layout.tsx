@@ -17,10 +17,10 @@ export function Layout({ children }: { children?: ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
+      <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border/50">
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="size-9 rounded-xl gradient-emerald grid place-items-center shadow-emerald">
+            <div className="size-9 rounded-xl gradient-gold grid place-items-center shadow-gold">
               <Shield className="size-5 text-accent-foreground" strokeWidth={2.5} />
             </div>
             <div className="leading-tight">
@@ -37,7 +37,7 @@ export function Layout({ children }: { children?: ReactNode }) {
                 <Link
                   key={it.to}
                   to={it.to}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     active
                       ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:text-primary hover:bg-secondary"
@@ -54,7 +54,7 @@ export function Layout({ children }: { children?: ReactNode }) {
       <main className="flex-1 pb-24 md:pb-12">{children ?? <Outlet />}</main>
 
       {/* Footer (desktop) */}
-      <footer className="hidden md:block border-t border-border bg-primary text-primary-foreground/80">
+      <footer className="hidden md:block bg-primary text-primary-foreground/80">
         <div className="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row justify-between gap-6 text-sm">
           <div>
             <div className="font-display text-2xl text-primary-foreground">{AGENT.company}</div>
@@ -71,7 +71,7 @@ export function Layout({ children }: { children?: ReactNode }) {
       </footer>
 
       {/* Bottom nav (mobile) */}
-      <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur-xl border-t border-border">
+      <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur-xl border-t border-border/50">
         <div className="grid grid-cols-5">
           {navItems.map((it) => {
             const active = location.pathname === it.to;
@@ -81,12 +81,12 @@ export function Layout({ children }: { children?: ReactNode }) {
                 key={it.to}
                 to={it.to}
                 className={`flex flex-col items-center justify-center py-2.5 gap-1 text-[11px] font-medium transition-colors ${
-                  active ? "text-accent" : "text-muted-foreground"
+                  active ? "text-gold" : "text-muted-foreground"
                 }`}
               >
                 <div
                   className={`size-9 grid place-items-center rounded-xl transition-all ${
-                    active ? "gradient-emerald shadow-emerald text-accent-foreground" : ""
+                    active ? "gradient-gold shadow-gold text-accent-foreground" : ""
                   }`}
                 >
                   <Icon className="size-[18px]" strokeWidth={active ? 2.5 : 2} />

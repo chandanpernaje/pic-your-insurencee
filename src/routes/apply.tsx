@@ -156,7 +156,7 @@ Please share the best quotes and the payment link.`;
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-16">
+      <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-20">
         <form
           onSubmit={submit}
           className="bg-card border border-border rounded-3xl p-6 md:p-10 shadow-elegant grid gap-6"
@@ -191,8 +191,8 @@ Please share the best quotes and the payment link.`;
                     onClick={() => setForm({ ...form, category: c.key })}
                     className={`py-3 px-3 rounded-2xl text-xs md:text-sm font-medium border transition-all leading-tight ${
                       active
-                        ? "border-accent gradient-emerald text-accent-foreground shadow-emerald"
-                        : "border-border bg-background hover:border-accent/50"
+                        ? "border-gold gradient-gold text-accent-foreground shadow-gold"
+                        : "border-border bg-background hover:border-gold/50"
                     }`}
                   >
                     {c.key}
@@ -236,8 +236,8 @@ Please share the best quotes and the payment link.`;
             />
           </Field>
 
-          <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4 flex gap-3 text-sm">
-            <AlertCircle className="size-5 text-accent shrink-0 mt-0.5" />
+          <div className="rounded-2xl border border-gold/30 bg-gold/5 p-4 flex gap-3 text-sm">
+            <AlertCircle className="size-5 text-gold shrink-0 mt-0.5" />
             <p className="text-muted-foreground leading-relaxed">
               <strong className="text-primary">How it works:</strong> we open
               WhatsApp with your details pre-filled. In the same chat, tap the
@@ -248,13 +248,13 @@ Please share the best quotes and the payment link.`;
 
           <button
             type="submit"
-            className="inline-flex items-center justify-center gap-2 py-4 rounded-full gradient-emerald text-accent-foreground font-semibold shadow-emerald hover:translate-y-[-1px] transition"
+            className="inline-flex items-center justify-center gap-2 py-4 rounded-full gradient-gold text-accent-foreground font-semibold shadow-gold hover:translate-y-[-1px] hover:shadow-lg transition-all"
           >
             Send details to {AGENT.shortName} on WhatsApp <Send className="size-4" />
           </button>
 
           <p className="flex items-center gap-2 text-xs text-muted-foreground justify-center">
-            <ShieldCheck className="size-4 text-accent" />
+            <ShieldCheck className="size-4 text-gold" />
             Your documents are shared only with your IRDAI-certified advisor.
           </p>
         </form>
@@ -273,8 +273,8 @@ Please share the best quotes and the payment link.`;
           transition: border-color .15s, box-shadow .15s;
         }
         .input-field:focus {
-          border-color: var(--color-accent);
-          box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-accent) 18%, transparent);
+          border-color: var(--color-gold);
+          box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-gold) 18%, transparent);
         }
       `}</style>
     </Layout>
@@ -322,16 +322,16 @@ function DocUpload({
       <button
         type="button"
         onClick={() => ref.current?.click()}
-        className={`w-full text-left rounded-2xl border-2 border-dashed p-4 transition flex items-start gap-3 ${
+        className={`w-full text-left rounded-2xl border-2 border-dashed p-4 transition-all flex items-start gap-3 ${
           file
-            ? "border-accent bg-accent/5"
+            ? "border-gold bg-gold/5"
             : error
               ? "border-destructive/60 bg-destructive/5"
-              : "border-border bg-background hover:border-accent/60"
+              : "border-border bg-background hover:border-gold/60"
         }`}
       >
         <div className="size-10 rounded-xl grid place-items-center shrink-0 bg-secondary text-primary">
-          {file ? <FileCheck2 className="size-5 text-accent" /> : <Upload className="size-5" />}
+          {file ? <FileCheck2 className="size-5 text-gold" /> : <Upload className="size-5" />}
         </div>
         <div className="min-w-0 flex-1">
           <div className="text-sm font-medium text-primary flex items-center gap-1.5">
@@ -340,7 +340,7 @@ function DocUpload({
           </div>
           <div className="text-[11px] text-muted-foreground">{labelKn}</div>
           {file ? (
-            <div className="mt-1 text-xs text-accent truncate">{file.name}</div>
+            <div className="mt-1 text-xs text-gold truncate">{file.name}</div>
           ) : (
             <div className="mt-1 text-xs text-muted-foreground">
               Tap to choose file
