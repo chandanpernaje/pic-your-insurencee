@@ -10,12 +10,12 @@ export const Route = createFileRoute("/quote")({
       {
         name: "description",
         content:
-          "Compare insurance quotes on InsuranceDekho or PolicyBazaar, or message Nandan Pernaje directly on WhatsApp for a personalised recommendation.",
+          "Message Nandan Pernaje directly on WhatsApp or call for a personalised recommendation and free insurance quote.",
       },
       { property: "og:title", content: "Get a Free Quote — Pic Your Insurance" },
       {
         property: "og:description",
-        content: "Compare policies and message Nandan Pernaje on WhatsApp.",
+        content: "Message Nandan Pernaje on WhatsApp for a free quote.",
       },
     ],
   }),
@@ -35,50 +35,12 @@ function QuotePage() {
             ಉಚಿತ ಕೋಟ್ ಪಡೆಯಿರಿ.
           </p>
           <p className="mt-3 text-primary-foreground/75 max-w-xl">
-            Compare policies on the partner portals {AGENT.name} uses, or
-            message him directly on WhatsApp for a tailored recommendation.
+            Get a tailored recommendation and the lowest available price. Message Nandan on WhatsApp or call him directly.
           </p>
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-5 -mt-10 md:-mt-14 pb-20 grid gap-5">
-        <div className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-elegant">
-          <h3 className="font-display text-xl md:text-2xl text-primary">
-            Compare yourself
-          </h3>
-          <p className="text-sm text-muted-foreground mt-1">
-            {AGENT.name} sources policies via these official partner portals.
-            Open one and explore quotes — then share the policy you like with
-            him for the best deal.
-          </p>
-          <div className="grid md:grid-cols-2 gap-3 mt-5">
-            <a
-              href={AGENT.portals.insuranceDekho}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center justify-between gap-2 px-4 py-4 rounded-2xl border border-border bg-background hover:border-gold hover:bg-gold/5 transition-all duration-300 text-sm font-medium text-primary"
-            >
-              <span>Open InsuranceDekho</span>
-              <ExternalLink className="size-4 text-muted-foreground" />
-            </a>
-            <a
-              href={AGENT.portals.policyBazaar}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center justify-between gap-2 px-4 py-4 rounded-2xl border border-border bg-background hover:border-gold hover:bg-gold/5 transition-all duration-300 text-sm font-medium text-primary"
-            >
-              <span>Open PolicyBazaar</span>
-              <ExternalLink className="size-4 text-muted-foreground" />
-            </a>
-          </div>
-          <Link
-            to="/policies"
-            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-gold hover:gap-2 transition-all"
-          >
-            See category-wise links →
-          </Link>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-5">
           <div className="bg-card border border-border rounded-3xl p-6 flex flex-col hover:shadow-elegant transition-shadow duration-300">
             <h3 className="font-display text-lg text-primary">

@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 
 const navItems = [
   { to: "/", label: "Home", labelKn: "ಮುಖ್ಯ", icon: Home },
-  { to: "/policies", label: "Compare", labelKn: "ಹೋಲಿಸಿ", icon: FileText },
   { to: "/quote", label: "Quote", labelKn: "ಕೋಟ್", icon: Calculator },
   { to: "/apply", label: "Apply", labelKn: "ಅರ್ಜಿ", icon: Upload },
   { to: "/contact", label: "Contact", labelKn: "ಸಂಪರ್ಕ", icon: MessageCircle },
@@ -72,7 +71,7 @@ export function Layout({ children }: { children?: ReactNode }) {
 
       {/* Bottom nav (mobile) */}
       <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur-xl border-t border-border/50">
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-4">
           {navItems.map((it) => {
             const active = location.pathname === it.to;
             const Icon = it.icon;

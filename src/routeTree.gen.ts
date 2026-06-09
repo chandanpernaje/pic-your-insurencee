@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as QuoteRouteImport } from './routes/quote'
-import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as AuthRouteImport } from './routes/auth'
@@ -26,11 +25,6 @@ import { Route as AuthenticatedAdminEditIdRouteImport } from './routes/_authenti
 const QuoteRoute = QuoteRouteImport.update({
   id: '/quote',
   path: '/quote',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliciesRoute = PoliciesRouteImport.update({
-  id: '/policies',
-  path: '/policies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -95,7 +89,6 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
-  '/policies': typeof PoliciesRoute
   '/quote': typeof QuoteRoute
   '/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/admin/$id': typeof AuthenticatedAdminIdRoute
@@ -109,7 +102,6 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
-  '/policies': typeof PoliciesRoute
   '/quote': typeof QuoteRoute
   '/admin/$id': typeof AuthenticatedAdminIdRoute
   '/admin/new': typeof AuthenticatedAdminNewRoute
@@ -124,7 +116,6 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
-  '/policies': typeof PoliciesRoute
   '/quote': typeof QuoteRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteRouteWithChildren
   '/_authenticated/admin/$id': typeof AuthenticatedAdminIdRoute
@@ -140,7 +131,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/calculator'
     | '/contact'
-    | '/policies'
     | '/quote'
     | '/admin'
     | '/admin/$id'
@@ -154,7 +144,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/calculator'
     | '/contact'
-    | '/policies'
     | '/quote'
     | '/admin/$id'
     | '/admin/new'
@@ -168,7 +157,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/calculator'
     | '/contact'
-    | '/policies'
     | '/quote'
     | '/_authenticated/admin'
     | '/_authenticated/admin/$id'
@@ -184,7 +172,6 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CalculatorRoute: typeof CalculatorRoute
   ContactRoute: typeof ContactRoute
-  PoliciesRoute: typeof PoliciesRoute
   QuoteRoute: typeof QuoteRoute
 }
 
@@ -195,13 +182,6 @@ declare module '@tanstack/react-router' {
       path: '/quote'
       fullPath: '/quote'
       preLoaderRoute: typeof QuoteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/policies': {
-      id: '/policies'
-      path: '/policies'
-      fullPath: '/policies'
-      preLoaderRoute: typeof PoliciesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -322,7 +302,6 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CalculatorRoute: CalculatorRoute,
   ContactRoute: ContactRoute,
-  PoliciesRoute: PoliciesRoute,
   QuoteRoute: QuoteRoute,
 }
 export const routeTree = rootRouteImport
